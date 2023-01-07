@@ -61,3 +61,9 @@ public void inBox(Box<? super Toy> box, Toy n) {
 ```
 1. outBox 메소드에 몸체에 set을 넣으면 컴파일 오류가 나는 이유를 설명해라.
 2. inBox 메소드 몸체에 get을 넣으면 컴파일 오류가 나는 이유를 설명해라.
+
+-------------------
+
+### 컬렉션 프레임워크
+1. 컬렉션 프레임워크의 상속 구조를 그려라.
+[정답](https://www.javatpoint.com/collections-in-java)
