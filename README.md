@@ -6,7 +6,6 @@
 2. Comparator를 구현한 클래스를 활용하여 내림차순으로 정렬해라.
 3. Comparator를 구현할때 익명클래스를 활용해라.
 4. Comparator를 구현할때 람다식을 활용해라.
-5. Comparator를 구현할때 메소드 참조를 활용해라.
     <details>
         <summary> 정답</summary>
 
