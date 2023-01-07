@@ -7,7 +7,9 @@
 3. Comparator를 구현할때 익명클래스를 활용해라.
 4. Comparator를 구현할때 람다식을 활용해라.
 5. Comparator를 구현할때 메소드 참조를 활용해라.
-
+<details>
+    <summary>정답</summary>
+    
 ```
 public class TreeSetTest {
     public static void main(String[] args) {
@@ -42,6 +44,9 @@ class PersonComparator implements Comparator<Person> {
     }
 }
 ```
+
+</details>
+
 
 --------------------
 
