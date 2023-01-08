@@ -61,7 +61,28 @@ public void inBox(Box<? super Toy> box, Toy n) {
 ```
 1. outBox 메소드에 몸체에 set을 넣으면 컴파일 오류가 나는 이유를 설명해라.
 2. inBox 메소드 몸체에 get을 넣으면 컴파일 오류가 나는 이유를 설명해라.
+<details>
+    <summary>정답</summary>
 
+- 4개의 클래스가 다음과 같다고 가정
+- Product, Toy, Car, Robot
+- Toy extends Product
+- Car extends Toy
+- Robot extends Toy
+- Box<Toy> 의 경우 Toy와 Car, Robot을 담을 수 있음
+- Box<Car> 의 경우 Car를 담을 수 있음
+- Box<Robot>의 경우 Robot을 담을 수 있음
+- Box<? extends Toy> 의 경우 ? 에 Toy, Car, Robot이 올 수 있음
+- Toy가 오면 다행이지만, Car가 올 경우 Toy나 Robot을 담을 수 없게됨.
+- 컴파일러는 어떠한 상황이든 가능할때 컴파일이 됨.
+- 때문에 Box<? extends Toy>는 set 기능이 제한됨.
+- 단, get의 경우 Toy 타입의 참조변수로 Toy든, Car든 Robot이든 어떤 구현체든 다 참조 할 수 있기 떄문에 get은 가능
+- Box<? super Toy> 의 경우 ? 에 Toy, Product가 올 수 있음
+- Product이 오든 Toy가 오든 Toy 를 포함한 하위 클래스들을 다 담을 수 있기에 set은 가능
+- 단 get의 경우 Product 구현체를 꺼낼 경우 Toy 타입의 참조변수로 참조할 수 없음.
+- 따라서 get은 기능이 제한됨.
+
+</details>
 -------------------
 
 ### 컬렉션 프레임워크
