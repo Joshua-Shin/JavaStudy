@@ -48,7 +48,7 @@ class PersonComparator implements Comparator<Person> {
     
 -------------------
 
-### 상향 제한, 하향 제한 개념 회상 문제
+### 상한 제한, 하한 제한 개념 회상 문제
 ```
 public void outBox(Box<? extends Toy> box) {
     Toy t = box.get();
