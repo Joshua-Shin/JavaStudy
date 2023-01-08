@@ -88,3 +88,26 @@ public void inBox(Box<? super Toy> box, Toy n) {
 ### 컬렉션 프레임워크
 1. 컬렉션 프레임워크의 상속 구조를 그려라.
 [정답](https://www.javatpoint.com/collections-in-java)
+
+-------------------
+
+### sort 메소드의 매개변수 해석 문제
+1. Collections 의 static 메소드인 sort가 아래의 소스코드 에서 첫째줄이 아니라 둘째줄인 이유가 무엇인지 설명해라.
+```
+public static <T extends Comparable<T>> void sort(List<T> list)
+public static <T extends Comparable<? super T>> void sort(List<T> list) 
+```
+<details>
+    <summary>정답</summary>
+    
+- 두개의 클래스가 있다
+- Car, ECar
+- Car implements Comparable<Car>
+- ECar extends Car
+- 만약 sort 메소드가 두번째줄로 정의 되어 있었다면,
+- Comparable<Car>를 구현하는 Car 클래스는 sort의 매개 타입으로 들어갈 수 있으나,
+- Comparable<ECar>를 따로 구현하고 있지 않은 ECar 클래스는 sort의 매개 타입으로 들어갈 수 없다.
+- ECar는 Comparable<Car>를 간접 구현하고 있으며, 따라서 이러한 상황에서 ECar가 매개 타입으로 들어가려면, 
+- sort 메소드의 정의는 두번째 줄이여야 한다.
+
+</details>
