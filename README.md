@@ -111,3 +111,18 @@ public static <T extends Comparable<? super T>> void sort(List<T> list)
 - sort 메소드의 정의는 두번째 줄이여야 한다.
 
 </details>
+
+### 가변인자
+- 가변인자가 없을때는 여러 인자를 담아 함수를 호출할 경우 컬렉션이나 배열 형태로 인자를 넘겼는데,
+  인자가 하나이든 없든 배열에 담든 상관없이 다 받아 줄 수 있어.
+```
+public void callMethod() {
+    test();
+    test("A");
+    test("A", "B");
+    test(new String[]{"A", "B", "C"});
+}
+public void test(String... param) {
+    System.out.println("param: " + param);
+}
+```
