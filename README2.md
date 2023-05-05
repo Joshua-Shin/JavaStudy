@@ -32,3 +32,25 @@ Arrays.sort(arr);
   - s = "a b c "
   - String [] ss = s.split(" "); // ["a", "b", "c"] // 공백을 기준으로 단어 나눔. 후행 공백은 없앰
   - String [] ss = s.split(" ", -1); // ["a", "b", "c", ""] // 후행 공백도 포함해서 나눔
+- 문자열 뒤집기
+  - StringBuilder sb = new StringBuilder(str);
+  - str = sb.reverse().toString();
+- 배열 정렬기준 직접 정의해서 사용하기
+```
+// n번째 문자를 기준으로 오름차순하거나, 동일하다면 전체 문자열을 기준으로 오름차순해라.
+String [] strings;
+Arrays.sort(strings, new Comparator<String>() {
+    public int compare(String a, String b) {
+        if(a.charAt(n) != b.charAt(n))
+            return a.charAt(n) - b.charAt(n);
+        return a.compareTo(b);
+    }
+});  
+```
+-  HashMap 클래스의 주요 메소드
+  - put(key, value): 키-값 쌍을 HashMap에 추가
+  - get(key): 지정된 키와 연결된 값을 반환합니다.
+  - containsKey(key): 지정된 키가 HashMap에 포함되어 있는지 여부를 반환합니다.
+  - remove(key): 지정된 키와 연관된 매핑을 제거합니다.
+  - size(): HashMap의 요소 수를 반환합니다.
+  - clear(): HashMap의 모든 요소를 제거
