@@ -47,7 +47,7 @@ Arrays.sort(strings, new Comparator<String>() {
     }
 });  
 ```
--  HashMap 클래스의 주요 메소드
+- HashMap 클래스의 주요 메소드
   - put(key, value): 키-값 쌍을 HashMap에 추가
   - get(key): 지정된 키와 연결된 값을 반환합니다.
   - containsKey(key): 지정된 키가 HashMap에 포함되어 있는지 여부를 반환합니다.
