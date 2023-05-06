@@ -5,9 +5,13 @@
 - 컬렉션 사이즈 .size()
 - import java.util.*;
 - answer = Math.max(answer, 100); // 최대값
+- int 배열 정렬, 역순정렬
 ```
 int[] arr = {1,3,4,5,6};
 Arrays.sort(arr);
+
+Integer[] arr2 = Arrays.stream(arr).boxed().toArray(Integer[]::new);
+Arrays.sort(arr2, Collections.reverseOrder());
 ```
 - s.charAt(i); 문자열 개별 접근
 - double result = Math.sqrt(25); : 제곱근. 입력 출력 다 double형
@@ -54,3 +58,15 @@ Arrays.sort(strings, new Comparator<String>() {
   - remove(key): 지정된 키와 연관된 매핑을 제거합니다.
   - size(): HashMap의 요소 수를 반환합니다.
   - clear(): HashMap의 모든 요소를 제거
+- String [] board = {"EEEE"}; 가 주어졌을때 "EEEE"의 n번째 인덱스 문자를 'A'로 바꾸는법.
+````
+String[] board = {"EEEE"};
+int n = 3; // 3번째 인덱스에 해당하는 문자를 'A'로 바꾸기 위해 n=3으로 설정
+
+// board[0]은 "EEEE"이므로, n-1에 해당하는 인덱스에 대한 문자를 'A'로 변경합니다.
+char[] chars = board[0].toCharArray(); // 문자열을 문자 배열로 변환
+chars[n-1] = 'A'; // n-1번째 인덱스의 문자를 'A'로 변경
+board[0] = new String(chars); // 변경된 문자 배열로 문자열을 갱신
+
+System.out.println(board[0]); // 출력: EEAE
+
