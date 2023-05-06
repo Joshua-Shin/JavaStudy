@@ -16,7 +16,7 @@ Arrays.sort(arr);
 - list.add(i); // List에 요소 추가.
 - list.remove(int index); // List 해당 index의 요소 삭제.
 - list.remove("SHIN"); // List 해당 문자열 객체 삭제. 제일 처음 발견한 해당 요소만을 삭제.
-- List<Integer> list; 의 경우. 
+- List\<Integer> list; 의 경우. 
   - list.remove(1) // index 1의 요소 삭제
   - list.remove(new Integer(1)) // 숫자 1인 요소 삭제. 
 - s.substring(int beginIndex, int endIndex)
