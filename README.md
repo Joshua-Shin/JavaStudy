@@ -1,5 +1,48 @@
 자바 개념을 회상하기 위해 기록하는 저장소 입니다.
 ---------------------
+### private와 public
+- 이 둘의 접근 제어 지시자는 클래스 내부냐 외부냐를 기준으로 직접 접근의 가능 여부가 다름
+- 중요한건 객체. 인스턴스. 기준이 아니라 "클래스" 기준이라는거.
+- 따라서 다른 객체더라도 같은 클래스 안에서라면 접근이 가능하다.
+- 예시 : nextSong.nextSong; 이라든가 nextSong.name; 이런걸 막 써도 컴파일 오류 발생 안함.
+```
+import java.util.HashSet;
+
+public class Song {
+    private String name;
+    private Song nextSong;
+
+    public Song(String name) {
+        this.name = name;
+    }
+
+    public void setNextSong(Song nextSong) {
+        this.nextSong = nextSong;
+    }
+
+    public boolean isInRepeatingPlaylist() {
+        HashSet<String> songList = new HashSet<>();
+        songList.add(name);
+        while(true) {
+            if(nextSong == null) return false;
+            if(songList.contains(nextSong.name)) return true;
+            songList.add(nextSong.name);
+            nextSong = nextSong.nextSong;
+        }
+    }
+
+    public static void main(String[] args) {
+        Song first = new Song("Hello");
+        Song second = new Song("Eye of the tiger");
+
+        first.setNextSong(second);
+        second.setNextSong(first);
+
+        System.out.println(first.isInRepeatingPlaylist());
+    }
+}
+```
+
 
 ### Comparable, Comparator, 익명클래스, 람다식 회상용 구현 문제
 1. Person 클래스를 정의 해서 TreeSet에 담아 오름차순으로 정렬 해라.
